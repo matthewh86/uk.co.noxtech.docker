@@ -1,0 +1,32 @@
+allprojects{
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+}
+
+subprojects {
+    buildscript {
+        repositories {
+            mavenLocal()
+            mavenCentral()
+            jcenter()
+        }
+    }
+
+    apply plugin: 'java'
+ 
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+        testCompile("junit:junit:4.12")
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+    }
+}
+
+

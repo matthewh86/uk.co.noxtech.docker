@@ -1,0 +1,17 @@
+/.gradle
+/.idea
+/out
+/gradle
+/uk.co.noxtech.docker.producer
+/uk.co.noxtech.docker.consumer
+/uk.co.noxtech.docker.rabbitmq
+/uk.co.noxtech.docker.data
+uk.co.noxtech.docker.ipr
+uk.co.noxtech.docker.iws
+uk.co.noxtech.docker.iml
+.classpath
+.project
+.gradle
+gradlew.bat
+gradlew
+

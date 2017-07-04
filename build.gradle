@@ -6,6 +6,7 @@ allprojects{
 subprojects {
     buildscript {
         repositories {
+			maven {url "http://cdlnexus01:8081/nexus/content/groups/public/"}
             mavenLocal()
             mavenCentral()
             jcenter()
@@ -15,6 +16,7 @@ subprojects {
     apply plugin: 'java'
  
     repositories {
+		maven {url "http://cdlnexus01:8081/nexus/content/groups/public/"}
         mavenLocal()
         mavenCentral()
         jcenter()
@@ -25,7 +27,6 @@ subprojects {
 
     dependencies {
         testCompile("junit:junit:4.12")
-        testCompile("org.springframework.boot:spring-boot-starter-test")
     }
 }
 

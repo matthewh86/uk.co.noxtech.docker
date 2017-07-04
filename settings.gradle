@@ -1,6 +1,6 @@
 include 'uk.co.noxtech.docker.producer'
 include 'uk.co.noxtech.docker.data'
 //include 'uk.co.noxtech.docker.consumer'
-//include 'uk.co.noxtech.docker.rabbitmq'
+include 'uk.co.noxtech.docker.rabbitmq'
 
 rootProject.name = 'uk.co.noxtech.docker'

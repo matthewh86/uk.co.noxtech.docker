@@ -14,7 +14,9 @@ subprojects {
     }
 
     apply plugin: 'java'
- 
+
+    group = "uk.co.noxtech"
+
     repositories {
 		maven {url "http://cdlnexus01:8081/nexus/content/groups/public/"}
         mavenLocal()
@@ -29,5 +31,3 @@ subprojects {
         testCompile("junit:junit:4.12")
     }
 }
-
-

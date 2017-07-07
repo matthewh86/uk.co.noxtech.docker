@@ -1,0 +1,17 @@
+version: '2'
+services:
+
+  rabbitmq:
+    extends:
+      file: uk.co.noxtech.docker.rabbitmq/docker-compose.yml
+      service: rabbitmq
+
+  consumer:
+    extends:
+      file: uk.co.noxtech.docker.consumer/docker-compose.yml
+      service: consumer
+
+  producer:
+    extends:
+      file: uk.co.noxtech.docker.producer/docker-compose.yml
+      service: producer

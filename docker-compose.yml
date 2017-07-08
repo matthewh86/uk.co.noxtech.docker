@@ -5,6 +5,8 @@ services:
     extends:
       file: uk.co.noxtech.docker.rabbitmq/docker-compose.yml
       service: rabbitmq
+    volumes:
+      - ./uk.co.noxtech.docker.rabbitmq/conf/rabbitmq.config:/etc/rabbitmq/rabbitmq.config
 
   consumer:
     extends:

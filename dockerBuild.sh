@@ -4,7 +4,7 @@ rm .env
 
 docker-compose stop
 
-gradle clean build distDocker
+./gradlew clean build distDocker
 docker-compose build --no-cache
 docker-compose start rabbitmq
 

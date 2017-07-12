@@ -1,15 +1,19 @@
 #!/bin/bash
 
-rm .env
+rm -fq .env
 
-docker-compose stop
+docker-compose down
 
-./gradlew clean build distDocker
+./gradlew clean
+./gradlew build
+./gradlew distDocker
+
 docker-compose build --no-cache
-docker-compose start rabbitmq
 
-RABBIT_MQ_IP=0
-while [ $RABBIT_MQ_IP = 0 ]; do
+x-terminal-emulator -e docker-compose up rabbitmq
+
+RABBIT_MQ_IP=""
+while [ "$RABBIT_MQ_IP" = "" ]; do
     RABBIT_MQ_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aqf "name=rabbitmq"))
     echo "Waiting for rabbitmq..."
     sleep 1
@@ -18,5 +22,5 @@ done
 echo "Found RabbitMQ IP: $RABBIT_MQ_IP"
 echo "RABBIT_MQ_IP=$RABBIT_MQ_IP" &> .env
 
-docker-compose start consumer
-docker-compose start producer
+x-terminal-emulator -e docker-compose up producer
+x-terminal-emulator -e docker-compose up consumer

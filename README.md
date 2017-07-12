@@ -1,4 +1,4 @@
-#uk.co.noxtech.docker
+# uk.co.noxtech.docker
 Example consumer, queue, producer application which send Telephone objects from
 the producer, to the Rabbit MQ instance specified by the environment variable
 RABBIT_MQ_IP, and is read into the consumer.
@@ -26,7 +26,7 @@ This needs the following to be installed:
 * **gradle distDocker** - builds the docker containers from the applications
 * **gradle idea**       - adds the IntelliJ Idea project files
 
-##Technologies used
+## Technologies used
 * Docker
 * Docker-Compose
 * Gradle
